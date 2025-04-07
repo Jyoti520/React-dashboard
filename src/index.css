@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+html, body {
+  overflow: scroll; 
+  -webkit-overflow-scrolling: touch; /* For smoother scrolling on mobile */
+}
+
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
