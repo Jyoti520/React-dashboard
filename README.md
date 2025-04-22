@@ -12,7 +12,7 @@ Developed a dynamic dashboard built with React-based web application that provid
 - **React**
 - **React Router Dom**
 - **Recharts / Framer-Motion / Lucide-react**
-- **TailwindCSS / Bootstrap** 
+- **TailwindCSS** 
 
 ## Installation:
 
@@ -36,7 +36,7 @@ To get started with the react-dashboard locally, follow these steps:
     npm start
    ```
    
-5. Open your browser and navigate to http://localhost:5000 to view the dashboard.
+
 
 
 
