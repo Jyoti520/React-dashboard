@@ -9,7 +9,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { motion } from "framer-motion";
+import ChartSection from '../commonComps/ChartSection';
 
 
 const dailyOrders=[
@@ -25,16 +25,7 @@ const dailyOrders=[
 
 function DailyOrders() {
   return (
-    <motion.div
-    className="bg-gradient-to-tr from-gray-700 to-gray-800 shadow-lg backdrop-blur-lg rounded-xl p-6 border-2 border-gray-600"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.1 }}
-  >
-    <div className="h-80">
-      <h2 className="text-left text-lg font-medium text-gray-300">
-        Daily Orders
-      </h2>
+    <ChartSection title='Daily Orders'>
      
       <ResponsiveContainer
         width={"100%"}
@@ -42,7 +33,6 @@ function DailyOrders() {
         
       >
         <LineChart data={dailyOrders}>
-          <CartesianGrid strokeDasharray={'3 3'} stroke="#545454"/>
           <XAxis
             dataKey={"date"}
             stroke="#bcbcbc"
@@ -57,18 +47,17 @@ function DailyOrders() {
             itemStyle={{ color: "#D1D5DB" }}
           />
           <Line
-            type="linear"
+            type="monotone"
             dataKey="orders"
-            stroke="#FF8c00"
+            stroke="#3b82f6"
             strokeWidth={2}
-            dot={{strokeWidth:2, r:6, fill:"#d97706"}}
-            activeDot={{strokeWidth:4, r:4,}}
+            dot={{strokeWidth:0, r:4, fill:"#93c5fd"}}
+            activeDot={{strokeWidth:4, r:4, stroke:"#3b82f6"}}
           />
           <Legend/>
         </LineChart>
       </ResponsiveContainer>
-    </div>
-  </motion.div>
+    </ChartSection>
   )
 }
 

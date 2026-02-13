@@ -75,9 +75,9 @@ function ProductsTable() {
 
   return (
     <>
-      <div className="bg-gray-800 backdrop-blur-md shadow-lg rounded-lg bg-opacity-50 py-4 px-6 border-2 border-gray-600 mb-6">
+      <div className="bg-gradient-to-r from-indigo-500/10 to-slate-900/10 shadow-lg backdrop-blur-lg rounded-xl p-4 border-2 border-indigo-500/30 py-4 px-6 border-t-2 mb-6">
         <div className="flex justify-between items-center mb-6">
-          <h3 className="text-xl font-medium text-gray-100 mb-2">
+          <h3 className="text-md sm:text-lg font-medium text-gray-200 mb-2">
             Product List
           </h3>
 
@@ -87,36 +87,36 @@ function ProductsTable() {
               value={search}
               placeholder="Search Products here..."
               onChange={handleSearch}
-              className="bg-gray-700 placeholder:text-gray-300
-    focus:outline-none focus:ring-2 focus:ring-amber-700  pl-4 rounded-md py-2 pr-6"
+              className="bg-white/10 placeholder:text-gray-400
+    focus:outline-none focus:ring-2 focus:ring-indigo-600  pl-4 rounded-md py-2 pr-6 transition"
             />
             <Search size={19} className="absolute top-2.5 right-2" />
           </div>
         </div>
 
         <div className="overflow-auto">
-          <table className="min-w-full divide-y-2 divide-gray-700">
+          <table className="min-w-full divide-y-2 divide-indigo-900/10">
             <thead>
-              <tr className="text-amber-400 font-medium">
-                <th className="px-6 py-4 tracking-tighter text-gray-400">
+              <tr className="text-indigo-500 font-medium">
+                <th className="px-6 py-4 tracking-tighter">
                   NAME
                 </th>
-                <th className="px-6 py-4 tracking-tighter text-gray-400">
+                <th className="px-6 py-4 tracking-tighter">
                   PRICE
                 </th>
-                <th className="px-6 py-4 tracking-tighter text-gray-400">
+                <th className="px-6 py-4 tracking-tighter ">
                   CATEGORY
                 </th>
-                <th className="px-6 py-4 tracking-tighter text-gray-400">
+                <th className="px-6 py-4 tracking-tighter">
                   SALES
                 </th>
-                <th className="px-6 py-4 tracking-tighter text-gray-400">
+                <th className="px-6 py-4 tracking-tighter">
                   STOCK
                 </th>
-                <th className="px-6 py-4 tracking-tighter text-gray-400"></th>
+                <th className="px-6 py-4 tracking-tighter"></th>
               </tr>
             </thead>
-            <tbody className="divide-y-2 divide-gray-700">
+            <tbody className="divide-y-2 divide-indigo-900/10">
               {data.map((product, index) => {
                 return (
                   <>
@@ -139,7 +139,7 @@ function ProductsTable() {
                       <td>
                         {" "}
                         <button className=" ml-4">
-                          <Edit size={20} color="#6EE787" />
+                          <Edit size={20} color="#6366f1" />
                         </button>
                         <button
                           className=" ml-4"

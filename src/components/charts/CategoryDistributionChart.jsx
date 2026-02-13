@@ -1,6 +1,6 @@
 // PieChart.js
 import React from 'react';
-import {AnimatePresence, motion} from 'framer-motion'
+import {AnimatePresence} from 'framer-motion'
 import {
   PieChart,
   Pie,
@@ -9,6 +9,7 @@ import {
   Legend,
   ResponsiveContainer
 } from 'recharts';
+import ChartSection from '../commonComps/ChartSection';
 
 const category_data = [
     { name: 'Electronics', value: 5000 },
@@ -24,16 +25,9 @@ const category_data = [
 
 const PieChartComponent = () => {
   return (
-    <motion.div
-          className="bg-gradient-to-tr from-gray-700 to-gray-800 shadow-lg backdrop-blur-lg rounded-lg p-4 border-2 border-gray-600"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
+    <ChartSection
+          title='Performance by order'
         >
-            <h2 className="text-left text-xl font-medium text-gray-300">
-          Orders Performance
-        </h2>
-      <div className="h-80">
         <AnimatePresence>
       <ResponsiveContainer width={"100%"} height={'100%'} >
         <PieChart>
@@ -59,8 +53,7 @@ const PieChartComponent = () => {
         </PieChart>
       </ResponsiveContainer>
       </AnimatePresence>
-      </div>
-    </motion.div>
+      </ChartSection>
   );
 };
 

@@ -64,17 +64,17 @@ const handleSearch=(e)=>{
    }
 
   return (
-    <div className="bg-gray-800 backdrop-blur-md shadow-lg rounded-lg bg-opacity-50 py-4 px-6 border-t-2  border-2 border-gray-600 mb-6">
-    <div className="flex justify-between items-center mb-6">
-      <h3 className="text-xl font-medium text-gray-100 mb-2">User List</h3>
+    <div className="bg-gradient-to-r from-indigo-500/10 to-slate-900/10 shadow-lg backdrop-blur-lg rounded-xl p-4 border-2 border-indigo-500/30 py-4 px-6 border-t-2 mb-6">
+    <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
+      <h3 className="text-lg font-medium text-gray-200 mb-2">Users</h3>
 
       <div className="relative">
         <input
           value={search}
           type="text"
           placeholder="Search users here..."
-          className="bg-gray-700 placeholder:text-gray-300 focus:outline-none
- focus:ring-2 focus:ring-amber-700  pl-2 rounded-md py-2 pr-6"
+          className="bg-white/10 placeholder:text-gray-400 focus:outline-none
+ focus:ring-2 focus:ring-indigo-700 pl-4 rounded-md py-2 pr-6"
             onChange={handleSearch}/>
         <Search size={19} className="absolute top-2.5 right-2" />
       </div>
@@ -82,17 +82,17 @@ const handleSearch=(e)=>{
 
      <div className="overflow-auto">
     
-    <table className="min-w-full divide-y-2 divide-gray-700">
-      <thead>
-     <tr className="text-amber-400 font-medium">
-      <th className="px-6 py-4 tracking-tighter text-amber-500">NAME</th>
-      <th className="px-6 py-4 tracking-tighter text-amber-500">EMAIL</th>
-      <th className="px-6 py-4 tracking-tighter text-amber-500">ROLE</th>
-      <th className="px-6 py-4 tracking-tighter text-amber-500">STATUS</th>
-      <th className="px-6 py-4 tracking-tighter text-amber-500"></th>
+    <table className="min-w-full divide-y-2 divide-indigo-900/10">
+    <thead>
+     <tr className="text-violet-400">
+      <th className="px-6 py-4 tracking-tighter">NAME</th>
+      <th className="px-6 py-4 tracking-tighter">EMAIL</th>
+      <th className="px-6 py-4 tracking-tighter">ROLE</th>
+      <th className="px-6 py-4 tracking-tighter">STATUS</th>
+      <th className="px-6 py-4 tracking-tighter"></th>
     </tr>
     </thead>
-    <tbody className="divide-y-2 divide-gray-700">
+    <tbody className="divide-y-2">
       
     {data.map((user) => {
        return ( <>
@@ -103,9 +103,9 @@ const handleSearch=(e)=>{
         </td>
           <td className="px-6 py-3 whitespace-nowrap text-md text-gray-100 font-medium text-left">{user.email}</td>
           <td className="px-6 py-3 whitespace-nowrap text-md text-gray-100 font-medium text-left">{user.role}</td>
-          <td className={`px-6 py-2 whitespace-nowrap text-md text-gray-100 font-medium text-left ${user.status=="Active" ? "text-green-300": "text-red-400"} `}>{user.status}</td>
+          <td className={`px-6 py-2 whitespace-nowrap text-md text-gray-100 font-medium text-left ${user.status=="Active" ? "text-green-400": "text-red-500"} `}>{user.status}</td>
          <td> <button className=" ml-4"> 
-        <EditIcon size={20} color="#7fffd4"/>
+        <EditIcon size={20} color="cyan"/>
       </button>
       <button className=" ml-4" onClick={()=>deleteuser(user.id)}> 
         <Trash size={24} color="red"/>

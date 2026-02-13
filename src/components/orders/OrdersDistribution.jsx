@@ -22,12 +22,12 @@ const COLORS = ["#6EE787", "#EC48F9", "#FFD700", "#ff7474", "#FF33A6"];
 function OrdersDistribution() {
   return (
     <motion.div
-      className="bg-gradient-to-tr from-gray-700 to-gray-800 shadow-md backdrop-blur-sm rounded-lg p-4 border-2 border-gray-600"
+      className="bg-gradient-to-r from-indigo-500/10 to-slate-900/10 shadow-lg backdrop-blur-lg rounded-xl p-4 border-2 border-indigo-500/30"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 }}
     >
-      <h2 className="text-left text-xl font-medium text-gray-300">
+      <h2 className="text-left text-xl font-medium text-gray-400">
         Orders Status
       </h2>
       <div className="h-80">

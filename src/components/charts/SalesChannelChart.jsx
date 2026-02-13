@@ -10,6 +10,7 @@ import {
   Cell,
 } from "recharts";
 import { motion } from "framer-motion";
+import ChartSection from "../commonComps/ChartSection";
 
 const salesData = [
   { name: "Online Store", sales: 5000 },
@@ -23,16 +24,10 @@ const COLORS = ["#FF5733", "#33FF57", "#3357FF", "#FF33A6", "#FF8333"];
 
 function SalesChannelChart() {
   return (
-    <motion.div
-      className="bg-gradient-to-tr from-gray-700 to-gray-800 shadow-lg backdrop-blur-lg rounded-xl p-4 border-2 border-gray-600 lg:col-span-2"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2 }}
+    <ChartSection
+      className="lg:col-span-2"
+      title="sales through channel"
     >
-      <h2 className="text-center text-xl font-medium text-gray-300">
-        Sales by Channel
-      </h2>
-      <div className="h-80 w-[100%]">
         <ResponsiveContainer
           width={"100%"}
           height={"100%"}
@@ -55,7 +50,7 @@ function SalesChannelChart() {
             <Legend fontSize={30}/>
 
             {/* Bar chart with sales data */}
-            <Bar dataKey="sales" fill="#FF33A6" barSize={100}>
+            <Bar dataKey="sales" fill="#10b981" barSize={100}>
               {salesData.map((entry, index) => (
                 <Cell
                   key={`cell-${index}`}
@@ -65,8 +60,7 @@ function SalesChannelChart() {
             </Bar>
           </BarChart>
         </ResponsiveContainer>
-      </div>
-    </motion.div>
+      </ChartSection>
   );
 }
 

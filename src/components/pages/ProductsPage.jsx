@@ -1,6 +1,4 @@
-import React from "react";
 import { motion } from "framer-motion";
-import Header from "../commonComps/Header";
 import StatsCards from "../commonComps/StatsCards";
 import {
   Package2,
@@ -11,11 +9,10 @@ import {
 import ProductsTable from "../products/ProductsTable";
 import SalesByProduct from "../products/SalesByProduct";
 import CategoryDistributionChart from '../charts/CategoryDistributionChart'
+import MainSection from "../commonComps/MainSection";
 function ProductsPage() {
   return (
-    <div className="flex-1 mx-auto relative z-50 w-full overflow-auto scrollbar-none ">
-      <Header title={"Products"} />
-      <main className="max-w-7xl px-4 py-2 mx-auto lg:p-8 sm:px-6">
+      <MainSection>
         <motion.div
           className="grid grid-cols-1 gap-4 py-6 px-6 md:grid-cols-2 sm:grid-cols-1 sm:gap-2
     lg:grid-cols-4 mb-8"
@@ -55,8 +52,7 @@ function ProductsPage() {
           <SalesByProduct />
           <CategoryDistributionChart/>
         </div>
-      </main>
-    </div>
+      </MainSection>
   );
 }
 

@@ -20,12 +20,12 @@ const salesByCategory = [
 function SalesBycategoryChart() {
   return (
     <motion.div
-          className="bg-gradient-to-tr from-gray-700 to-gray-800 shadow-lg backdrop-blur-sm rounded-lg p-4 border-2 border-gray-600"
+          className="bg-gradient-to-r from-indigo-500/10 to-slate-900/10 shadow-lg backdrop-blur-lg rounded-xl p-4 border-2 border-indigo-500/30"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-            <h2 className="text-left text-xl font-normal text-gray-200">
+            <h2 className="text-left text-xl font-normal text-gray-400">
           Sales by category
         </h2>
       <div className="h-80">

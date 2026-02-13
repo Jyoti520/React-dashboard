@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { RadarChart, Radar, ResponsiveContainer, PolarGrid, PolarRadiusAxis, PolarAngleAxis, Legend,Tooltip } from "recharts";
+import ChartSection from "../commonComps/ChartSection";
 
 
 const segmentationData = [
@@ -14,17 +15,10 @@ const segmentationData = [
 
 function CustomerSegmentation() {
   return (
-    <motion.div
-      className="bg-gradient-to-tr from-gray-700 to-gray-800 shadow-lg backdrop-blur-lg rounded-xl p-4 border-2 border-gray-700 mt-6"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.1 }}
+    <ChartSection
+      title="Customer Segmentation"
     >
-      <h2 className="text-left text-lg font-medium text-gray-300">
-         Customer Segmentation
-      </h2>
-
-      <div className="h-80">
+    
         <ResponsiveContainer width={"100%"} height={"100%"}>
           <RadarChart data={segmentationData} cx='50%' cy='50%'  outerRadius={'80%'}>
              <PolarGrid stroke="#374151"/>
@@ -55,8 +49,7 @@ function CustomerSegmentation() {
             
           </RadarChart>
         </ResponsiveContainer>
-      </div>
-    </motion.div>
+      </ChartSection>
   );
 }
 

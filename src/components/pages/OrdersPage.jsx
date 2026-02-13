@@ -1,11 +1,10 @@
-import React from 'react'
 import {motion} from 'framer-motion'
 import {ShoppingBagIcon, CheckCircle2, Clock, DollarSign} from 'lucide-react'
 import StatsCard from '../commonComps/StatsCards'
-import Header from '../commonComps/Header'
 import DailyOrders from '../orders/DailyOrders'
 import OrdersDistribution from '../orders/OrdersDistribution'
 import OrdersTable from '../orders/OrdersTable'
+import MainSection from '../commonComps/MainSection'
 
 const orderStats={
   totalOrders:"1,533",
@@ -16,9 +15,7 @@ const orderStats={
 
 function OrdersPage() {
   return (
-    <div className='flex-1 mx-auto relative z-10 w-full overflow-auto scrollbar-none'>
-      <Header title={"Orders"}/>
-      <main className='max-w-7xl px-4 py-6 mx-auto lg:p-8'>
+      <MainSection>
        {/* STaTS */}
        <motion.div className="grid grid-cols-1 gap-4 md:grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 mb-8"
        initial={{opacity:0, y:20}}
@@ -32,13 +29,12 @@ function OrdersPage() {
        </motion.div>
 
        {/* CHARTs */}
-       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-6">
        <DailyOrders/>
        <OrdersDistribution/>
        </div>
        <OrdersTable/>
-      </main>
-    </div>
+      </MainSection>
   )
 }
 

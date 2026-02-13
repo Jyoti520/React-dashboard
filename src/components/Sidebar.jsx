@@ -14,13 +14,13 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 
 let sidebar_navItems = [
-  { name: "Dashboard", icon: BarChart2, color: "#F08080", href: "/" },
-  { name: "Products", icon: ShoppingBag, color: "#EC4899", href: "/products" },
-  { name: "Users", icon: Users, color: "#FFB6C1", href: "/users" },
+  { name: "Home", icon: BarChart2, color: "#F08080", href: "/" },
+  { name: "Products", icon: ShoppingBag, color: "#6366F1", href: "/products" },
+  { name: "Users", icon: Users, color: "#c4b5fd", href: "/users" },
   { name: "Sales", icon: DollarSign, color: "#6EE789", href: "/sales" },
-  { name: "Orders", icon: ShoppingCart, color: "#F95E0B", href: "/orders" },
-  { name: "Analytics", icon: TrendingUp, color: "#388F26", href: "analytics" },
-  { name: "Settings", icon: Settings, color: "#6366F1", href: "/settings" },
+  { name: "Orders", icon: ShoppingCart, color: "#93c5fd", href: "/orders" },
+  { name: "Analytics", icon: TrendingUp, color: "#06b6d4", href: "analytics" },
+  { name: "Settings", icon: Settings, color: "#bcbcbc", href: "/settings" },
 ];
 
 function Sidebar() {
@@ -56,31 +56,30 @@ function Sidebar() {
            
       >
        
-        <div className="h-full border-r-2 border-gray-600 bg-gradient-to-tr from-gray-600 via-gray-800 to-gray-700 shadow-lg backdrop-blur-lg flex flex-col p-4">
+        <div className="h-full border-r-2 border-indigo-700/30 bg-gradient-to-tr from-slate-900/10 to-indigo-900/10 shadow-lg flex flex-col p-4 transition-all">
           {<motion.button
-            className="p-2 rounded-full  hover:bg-gray-500 transition-colors max-w-fit text-gray-300"
-            whileHover={{ scale: 1.1, color:"white" }}
+            className="p-2 rounded-full hover:bg-indigo-500/30 transition-colors max-w-fit text-gray-500"
+            whileHover={{ scale: 1.1, color:"white", }}
             whileTap={{ scale: 0.9, color:"white" }}
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
             <Menu size="24"/>
           </motion.button>}
-          <nav className="mt-4 flex-grow-0">
+          <nav className="mt-3 flex-grow items-center justify-center">
             {sidebar_navItems.map((item, index) => (
               <Link key={index} to={item.href} path={item.href} className="no-underline text-gray-200">
-                <motion.div className="flex py-2 mt-4 px-2 hover:bg-gray-600 rounded-md text-lg">
+                <motion.div className="flex py-3 mt-4 px-3 hover:bg-indigo-700/30 rounded-md text-xl">
                   <item.icon
                     size={24}
-                    style={{ color: item.color, minWidth: "24px" }}
+                    style={{ color: item.color, minWidth: "28px" }}
                   />
                   <AnimatePresence>
                     {isSidebarOpen && (
                      
                       <motion.span
-                        className="ml-4 whitespace-nowrap text-gray-300"
+                        className="ml-4 whitespace-nowrap text-gray-300 transition-transform duration-300"
                         initial={{ opacity: 0, width: 0 }}
                         animate={{ opacity: 1, width: "auto" }}
                         exit={{ opacity: 0, width: 0 }}
-                        transition={{ duration: 0.2}}
                       >
                         {item.name}
                       </motion.span>

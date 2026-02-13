@@ -8,6 +8,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import ChartSection from '../commonComps/ChartSection';
 
 
 const channelPerformance = [
@@ -22,16 +23,9 @@ const COLORS = ["#FF5733", "#33FF57", "#3357FF", "#FF33A6", "#FF8333"];
 
 function ChannelPerformance() {
   return (
-    <motion.div
-    className="bg-gradient-to-tr from-gray-700 to-gray-800 shadow-md backdrop-blur-lg rounded-lg p-4 border-2 border-gray-700 mt-6"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.1 }}
+    <ChartSection
+    title='channel Performance'   
   >
-    <h2 className="text-left text-xl font-medium text-gray-300">
-      Channel Performance
-    </h2>
-    <div className="h-80">
       <AnimatePresence>
         <ResponsiveContainer width={"100%"} height={"100%"}>
           <PieChart>
@@ -63,8 +57,7 @@ function ChannelPerformance() {
           </PieChart>
         </ResponsiveContainer>
       </AnimatePresence>
-    </div>
-  </motion.div>
+   </ChartSection>
   )
 }
 

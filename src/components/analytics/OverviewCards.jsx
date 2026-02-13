@@ -14,7 +14,7 @@ function OverviewCards() {
     <div className="grid grid-col-1 gap-4 min-md:grid-cols-2 sm:gap-4 lg:grid-cols-4 mb-8">
       {overviewData.map((data, index) => (
         <motion.div
-          className="px-6 py-2 bg-gradient-to-tr my-2 from-gray-800 to-gray-700 bg-opacity-50 backdrop-blur-sm shadow-lg rounded-lg border-2 border-gray-700"
+          className="px-6 py-2 bg-gradient-to-tr my-2 from-indigo-500/10 to-slate-900/10 shadow-lg backdrop-blur-lg rounded-xl p-4 border-2 border-indigo-500/30"
           key={data.name}
           whileHover={{ y: -5, boxShadow: "0 10px 15px rgba(0, 0, 0, 0.1)" }}
           initial={{ opacity: 0, y: 20 }}

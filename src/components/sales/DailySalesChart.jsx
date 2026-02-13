@@ -9,7 +9,7 @@ import {
   YAxis,
   Cell,
 } from "recharts";
-import { motion } from "framer-motion";
+import ChartSection from '../commonComps/ChartSection';
 
 const dailySales=[
 { week: "Mon", sales: 1000 },
@@ -25,16 +25,9 @@ const dailySales=[
 
 function DailyOrders() {
   return (
-    <motion.div
-    className="bg-gradient-to-tr from-gray-700 to-gray-800 shadow-lg backdrop-blur-sm rounded-xl p-6 border-2 border-gray-600"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.2 }}
+    <ChartSection
+    title='Sales trend'
   >
-    <h2 className="text-center text-xl font-normal text-gray-300">
-    Daily sales trend
-    </h2>
-    <div className="h-80">
       <ResponsiveContainer
         width={"100%"}
         height={"100%"}
@@ -57,18 +50,18 @@ function DailyOrders() {
           <Legend />
 
           {/* Bar chart with sales data */}
-          <Bar dataKey="sales" fill="#d97706" barSize={40}>
+          <Bar dataKey="sales" fill="#10b981" barSize={30}>
             {dailySales.map((entry, index) => (
               <Cell
                 key={`cell-${index}`}
-                fill={"#ff7474"}
+                fill={"#10b981"}
+                opacity={0.6}
               />
             ))}
           </Bar>
         </BarChart>
       </ResponsiveContainer>
-    </div>
-  </motion.div>
+    </ChartSection>
   )
 }
 
