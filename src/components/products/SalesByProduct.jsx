@@ -1,7 +1,6 @@
 import React from "react";
 import {
     Legend,
-    CartesianGrid,
     ResponsiveContainer,
     Line,
     LineChart,
@@ -11,6 +10,7 @@ import {
 
   } from "recharts";
   import { motion } from "framer-motion";
+import ChartSection from "../commonComps/ChartSection";
 
 
 const salesData = [
@@ -33,24 +33,17 @@ const salesData = [
 
 function SalesByProduct() {
   return (
-  <motion.div
-       className="bg-gradient-to-tr from-gray-700 to-gray-800 shadow-lg backdrop-blur-lg rounded-xl p-4 border-2 border-gray-600"
-       initial={{ opacity: 0, y: 20 }}
-       animate={{ opacity: 1, y: 0 }}
-       transition={{ delay: 0.1 }}
+  <ChartSection
+       title="Sales by Product"
+    
      >
-       <div className="h-80">
-         <h2 className="text-left text-xl font-medium text-gray-300">
-           Sales Trends
-         </h2>
-        
          <ResponsiveContainer
            width={"100%"}
            height={"100%"}
            
          >
-           <LineChart data={salesData}>
-               <CartesianGrid strokeDasharray={'3 3'} stroke="#374151"/>
+           <LineChart data={salesData} margin={{top:10,right:20, left:0,bottom:5}}>
+              
              <XAxis
                dataKey={"month"}
                stroke="#bcbcbc"
@@ -60,21 +53,22 @@ function SalesByProduct() {
              <Tooltip
                contentStyle={{
                  backgroundColor: "rgba(31,41,55,0.8)",
-                 borderColor: "#888d84",
+                 borderColor: "#374515",
                }}
-               itemStyle={{ color: "#D1D5DB" }}
+               itemStyle={{ color: "#ddd6fe" }}
              />
              <Line
-               type="linear"
+               dot={{r:5, fill:"#6ee7b7", strokeWidth:0}}
+               activeDot={{r:4, fill:"#6ee7b7", strokeWidth:2}}
+               type="monotone"
                dataKey="sales"
-               stroke="#ff7474"
+               stroke="#10b981"
                strokeWidth={2}
              />
               <Legend ></Legend>
            </LineChart>
          </ResponsiveContainer>
-       </div>
-     </motion.div>
+      </ChartSection>
   );
 }
 

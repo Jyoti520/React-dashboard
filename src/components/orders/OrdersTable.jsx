@@ -59,9 +59,9 @@ const handleSearch=(e)=>{
 }
   
   return (
-    <div className="bg-gradient-to-tr from-gray-700 to-gray-800 backdrop-blur-md shadow-lg rounded-lg bg-opacity-50 py-6 px-6 border-2 border-gray-600 mb-6">
+    <div className="bg-gradient-to-tr from-indigo-500/10 to-slate-900/10 shadow-lg backdrop-blur-lg rounded-xl p-6 border-2 border-indigo-500/30 mb-6">
         <div className="flex justify-between items-center mb-6 overflow-x-auto">
-          <h3 className="text-xl font-medium text-gray-100 mb-2">Order List</h3>
+          <h3 className="text-lg sm:text-xl font-medium text-gray-200 mb-2">Order List</h3>
 
           <div className="relative">
             <input
@@ -69,8 +69,8 @@ const handleSearch=(e)=>{
               value={search}
               placeholder="Search Orders here..."
               onChange={handleSearch}
-              className="bg-gray-700 placeholder:text-gray-300
-     focus:outline-none focus:ring-2 focus:ring-amber-700  pl-4 rounded-md py-2 pr-6"
+              className="bg-white/10 placeholder:text-gray-300
+     focus:outline-none focus:ring-2 focus:ring-blue-400 pl-4 rounded-md py-2 pr-6"
             />
             <Search size={19} className="absolute top-2.5 right-2" />
           </div>
@@ -78,17 +78,17 @@ const handleSearch=(e)=>{
 
          <div className="overflow-auto">
         
-        <table className="min-w-full divide-y-2 divide-gray-700">
+        <table className="min-w-full divide-y-2 divide-indigo-900/10">
           <thead>
-         <tr className="text-amber-400 font-medium">
-          <th className="px-6 py-4 tracking-tighter text-amber-600">ID</th>
-          <th className="px-6 py-4 tracking-tighter text-amber-600">DATE</th>
-          <th className="px-6 py-4 tracking-tighter text-amber-600">CATEGORY</th>
-          <th className="px-6 py-4 tracking-tighter text-amber-600">TOTAL VALUE</th>
-          <th className="px-6 py-4 tracking-tighter text-amber-600">STATUS</th>
+         <tr className="text-blue-400 font-medium">
+          <th className="px-6 py-4 tracking-tighter">ID</th>
+          <th className="px-6 py-4 tracking-tighter">DATE</th>
+          <th className="px-6 py-4 tracking-tighter">CATEGORY</th>
+          <th className="px-6 py-4 tracking-tighter">TOTAL VALUE</th>
+          <th className="px-6 py-4 tracking-tighter">STATUS</th>
         </tr>
         </thead>
-        <tbody className="divide-y-2 divide-gray-700">
+        <tbody className="divide-y-2 divide-indigo-900/10">
           
         {data.map((order,index) => {
            return ( <>

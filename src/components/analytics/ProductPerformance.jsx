@@ -1,6 +1,5 @@
-import React from 'react'
-import { Bar, BarChart, CartesianGrid, Cell , XAxis, YAxis, ResponsiveContainer,Tooltip,Legend  } from 'recharts'
-import { motion } from 'framer-motion'
+import { Bar, BarChart, XAxis, YAxis, ResponsiveContainer,Tooltip,Legend  } from 'recharts'
+import ChartSection from '../commonComps/ChartSection';
 
 const productPerformanceData = [
 	{ name: "Product A", sales: 4000, revenue: 2400, profit: 2400 },
@@ -12,16 +11,9 @@ const productPerformanceData = [
 
 function ProductPerformance() {
   return (
-    <motion.div
-    className="bg-gradient-to-tr from-gray-700 to-gray-800 shadow-lg backdrop-blur-lg rounded-xl p-4 border-2 border-gray-700 mt-6"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.1 }}
+    <ChartSection
+    title='Performance by product'
   >
-    <h2 className="text-left text-lg font-medium text-gray-300">
-     Product Performance
-    </h2>
-    <div className="h-80">
       <ResponsiveContainer
         width={"100%"}
         height={"100%"}
@@ -43,14 +35,13 @@ function ProductPerformance() {
           <Legend  />
 
           {/* Bar chart with sales data */}
-          <Bar dataKey="sales"   stackId={'a'}  fill="#8B5CF6" barSize={20}/>
-          <Bar dataKey="revenue" stackId={'b'}  fill="#F59E0B" barSize={20}/>
-          <Bar dataKey="profit"  stackId={'c'}  fill="#EC48F9" barSize={20}/>
+          <Bar dataKey="sales"   stackId={'total'}  fill="#3b82f6" barSize={20}/>
+          <Bar dataKey="revenue" stackId={'total'}  fill="#14b8a6" barSize={20}/>
+          <Bar dataKey="profit"  stackId={'total'}  fill="#059699" barSize={20}/>
           
         </BarChart>
       </ResponsiveContainer>
-    </div>
-  </motion.div>
+    </ChartSection>
   )
 }
 

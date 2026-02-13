@@ -13,11 +13,10 @@ function App() {
     <>
       <div
         className="flex h-screen text-gray-100 overflow-hidden 
-    bg-gradient-to-tr from-gray-700  to-gray-800"
+    bg-gradient-to-tr from-gray-900  to-black"
       >
         <div className="fixed inset-0 -z-10">
-          <div className="absolute inset-0 bg-opacity-50 bg-gradient-to-tr from-gray-600 to-gray-500 via-gray-800"></div>
-          <div className="absolute inset-0 backdrop-blur-sm"></div>
+          
         </div>
 
         <Sidebar />

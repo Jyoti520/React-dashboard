@@ -1,11 +1,10 @@
-import React from 'react'
 import {motion} from 'framer-motion'
-import Header from '../commonComps/Header'
 import StatsCards from '../commonComps/StatsCards'
 import { DollarSign, TrendingUpIcon, CreditCardIcon, ShoppingBagIcon} from 'lucide-react'
 import SalesAreaChart from '../sales/SalesAreaChart'
 import SalesBycategoryChart from '../sales/SalesBycategoryChart'
 import DailySalesChart from '../sales/DailySalesChart'
+import MainSection from '../commonComps/MainSection'
 
 
 const salesStats={
@@ -17,9 +16,7 @@ const salesStats={
 
 function SalesPage() {
   return (
-    <div className="w-[100%] flex-1 relative z-50 overflow-auto">
-      <Header title={"Sales"} />
-      <main className="max-w-7xl px-4 py-2 mx-auto lg:p-8 sm:px-6">
+    <MainSection>
         <motion.div
           className="grid grid-cols-1 gap-4 md:grid-cols-2 sm:gap-2
     lg:grid-cols-4 mb-8"
@@ -52,12 +49,11 @@ function SalesPage() {
 
         <SalesAreaChart/>
 
-        <div className="grid grid-cols-1 mb-8 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 mb-6 lg:grid-cols-2 gap-8">
        <SalesBycategoryChart/>  
        <DailySalesChart/>
        </div>
-      </main>
-    </div>
+      </MainSection>
   )
 }
 

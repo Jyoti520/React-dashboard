@@ -3,13 +3,11 @@ import {
   ResponsiveContainer,
   Line,
   LineChart,
-  CartesianGrid,
-  Legend,
   Tooltip,
   XAxis,
   YAxis,
 } from "recharts";
-import { motion } from "framer-motion";
+import ChartSection from "../commonComps/ChartSection";
 
 const salesData = [
   { month: "Jul", sales: 2000 },
@@ -25,18 +23,12 @@ const salesData = [
  
 ];
 
-function CategoryChart() {
+function SalesOverviewChart() {
   return (
-    <motion.div
-      className="bg-gradient-to-tr from-gray-700 to-gray-800 shadow-lg backdrop-blur-lg rounded-xl p-4 border-2 border-gray-600"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.1 }}
+    <ChartSection
+    className="pb-6"
+     title="Sales overview"
     >
-      <div className="h-80">
-        <h2 className="text-left text-xl font-medium text-gray-300">
-          Sales overview
-        </h2>
        
         <ResponsiveContainer
           width={"100%"}
@@ -44,7 +36,6 @@ function CategoryChart() {
           
         >
           <LineChart data={salesData}>
-            <CartesianGrid strokeDasharray={'3 3'} stroke="#d97706"/>
             <XAxis
               dataKey={"month"}
               stroke="#bcbcbc"
@@ -60,18 +51,17 @@ function CategoryChart() {
               itemStyle={{ color: "#fff" }}
             />
             <Line
-              type="linear"
+              type="monotone"
               dataKey="sales"
-              stroke="#d97706"
+              stroke="#10b981"
               strokeWidth={4}
-              dot={{strokeWidth:4, r:4, fill:"#d97706"}}
-              activeDot={{strokeWidth:4, r:4,}}
+              dot={{strokeWidth:0, r:5, fill:"#6ee7b7"}}
+              activeDot={{strokeWidth:2, r:4,}}
             />
           </LineChart>
         </ResponsiveContainer>
-      </div>
-    </motion.div>
+     </ChartSection>
   );
 }
 
-export default CategoryChart;
+export default SalesOverviewChart;

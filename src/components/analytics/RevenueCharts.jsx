@@ -19,7 +19,7 @@ function RevenueCharts() {
    const [selectedTimeRange, setSelectedTimeRange] = useState("this.Month");
   return (
     <motion.div
-         className="bg-gradient-to-tr from-gray-700 to-gray-800 shadow-lg backdrop-blur-lg rounded-xl p-4 border-2 border-gray-700"
+         className="bg-gradient-to-tr from-indigo-500/10 to-slate-900/10 shadow-lg backdrop-blur-lg rounded-xl p-6 border-2 border-indigo-500/30 mb-6"
          initial={{ opacity: 0, y: 20 }}
          animate={{ opacity: 1, y: 0 }}
          transition={{ delay: 0.1 }}
@@ -29,7 +29,7 @@ function RevenueCharts() {
              Revenue vs Target
            </h2>
            <select
-          className="bg-gray-700 text-gray-100 rounded-md px-3 py-1  focus:outline-none focus:ring-2 focus:ring-purple-400"
+          className="bg-white/10 text-gray-600 rounded-md px-3 py-1  focus:outline-none focus:ring-2 focus:ring-indigo-500"
           value={selectedTimeRange}
           onChange={() => setSelectedTimeRange(e.target.value)}
           >
@@ -43,7 +43,6 @@ function RevenueCharts() {
            <div className="h-80">
            <ResponsiveContainer width={"100%"} height={"100%"}>
              <AreaChart data={revenueData}>
-              <CartesianGrid strokeDasharray={'3 3'} stroke='#374515'/>
                <XAxis
                  dataKey={"month"}
                  stroke="#bcbcbc"
@@ -61,19 +60,19 @@ function RevenueCharts() {
                <Area
                  type="monotone"
                  dataKey="revenue"
-                 stroke="#10B981"
+                 stroke="#6366f1"
                  strokeWidth={2}
-                 fill="#10B981"
+                 fill="#6366f1"
                  fillOpacity={0.6}
                  
                />
                 <Area
                  type="monotone"
                  dataKey="target"
-                 stroke="#8B5CF6"
+                 stroke="#14b8a6"
                  strokeWidth={2}
-                 fill="#8B5CF6"
-                 fillOpacity={0.3}
+                 fill="#5eead4"
+                 fillOpacity={0.4}
                 
                />
              </AreaChart>
