@@ -52,7 +52,7 @@ function DailyOrders() {
             stroke="#3b82f6"
             strokeWidth={2}
             dot={{strokeWidth:0, r:4, fill:"#93c5fd"}}
-            activeDot={{strokeWidth:4, r:4, stroke:"#3b82f6"}}
+            activeDot={{strokeWidth:2, r:5, stroke:"#3b82f6"}}
           />
           <Legend/>
         </LineChart>
