@@ -17,7 +17,7 @@ const ordersDistributionData = [
   { name: "Delivered", value: 130 },
 ];
 // Custom colors for each category
-const COLORS = ["#6EE787", "#EC48F9", "#FFD700", "#ff7474", "#FF33A6"];
+const COLORS = ["#FF33A6", "#FFD700", "#10b981", "#ff7474", "#06b6d4"];
 
 function OrdersDistribution() {
   return (
