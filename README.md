@@ -1,6 +1,7 @@
-## React Dashboard
+## StatsView
 
 Developed a dynamic dashboard built with React-based web application that provides key insights into important business metrics. It helps track sales, user activity, and profitability in an interactive, easy-to-understand interface.
+
 
 ### Features:
 - **Dynamic UI**: Interactive elements such as dropdowns, modals, and charts.
